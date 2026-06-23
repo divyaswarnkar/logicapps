@@ -1,7 +1,144 @@
 # Azure Logic Apps (Standard)
 
-## Bundle and NuGet version 1.70.x
+## Bundle and NuGet version 1.170.x
+- **HL7 Decode** (breaking change): HL7 Decode action processing now supports both batched and single-message modes. As a result, there is a breaking change in the response format—the disassembled output is returned as an array, which may contain one or multiple messages depending on the input.
+- Various bug fixes and improvements
+<br><br>
 
+## Bundle and NuGet version 1.165.x
+- Added `pow()` built-in expression function for computing power/exponentiation (Math.Pow).
+- **Portal designer integration**: Added Foundry proxy endpoint.
+- Various bug fixes and improvements
+<br><br>
+
+## Bundle and NuGet version 1.161.x
+- **Parse XML with schema**: Fixed broken dynamic list that shows root nodes after schema selection.
+- Various bug fixes and improvements
+<br><br>
+
+## Bundle and NuGet version 1.160.21
+- Platform library update for Logic App Runtime.
+- Various bug fixes and improvements
+<br><br>
+
+## Bundle and NuGet version 1.160.9
+- **Agent workflows**: Added reasoning effort parameter, expanded model support, improved retry logic, and enhanced response format validation.
+- **HL7 messaging**: Fixed MSH header parsing for large content, added custom target namespace support, and improved error handling.
+- **SAP connector**: Fixed IDoc reception issue for unreleased segments.
+- **FTP built-in connector**: Disabled EPSV (Extended Passive Mode) to improve compatibility.
+- **MLLP connector**: Added Send message operation for HL7 message transmission.
+- **MCP (Model Context Protocol)**: Improved tool call response handling with structured content support.
+- Various bug fixes and improvements
+<br><br>
+
+## Bundle and NuGet version 1.156.x
+- Agent and workflow improvements: Enhanced reliability for agent workflows, including better caching and validation for agent handoff and tool calls.
+- Confluent connector: Now generally available and ready for production use.
+- Various bug fixes and improvements
+<br><br>
+
+## Bundle and NuGet version 1.149.x
+- **SAP** built-in trigger: Fixed support for large messages. Reduced CPU and memory overhead for SAP built-in trigger.
+- **MCP servers in agents**: Preview capability for adding remote MCP servers to agents in workflows. Agents can then call tools in these MCP servers.
+- **On-Behalf-Of (OBO) updates**: Expanded OBO authentication with dynamic connections and improved per-user context for agent workflows. Better CORS and preflight (OPTIONS request) support for A2A and agent endpoints.
+- **RabbitMQ GA**: RabbitMQ connector operations are generally available (GA) and ready for production use.
+- **Execute PowerShell GA**: Run inline PowerShell is generally available (GA) and lets you select the PowerShell version plus improved error handling. 
+- **Security and authentication**: Improved security for agents and workflow authentication by excluding refresh tokens from API responses. Expanded support for Okta as an identity provider alongside Microsoft Entra.
+- **HL7 and SAP messaging**: Enhanced HL7 support for more flexible line-endings and schema compatibility. SAP connector operations are more reliable and provide explicit exception handling for advanced integration scenarios.
+- **API and workflow management**: Improved validation and state management for agent and A2A loop workflows. Workflow cloning, type switching, session controls, and token usage limits are now more robust, enabling safer workflow evolution and management.
+- **Metrics, billing, and performance**: Enhanced in-memory cache usage and support for new metrics, including detailed billing and usage tracking for agent-based execution.
+- **Parse document action with metadata GA**: The **Parse document with metadata** action is generally available (GA) and ready for production use.
+- **Azure AI Document Intelligence GA**: The **Document Intelligence** connector operations are generally available (GA) and ready for production use.
+- **Chunk text with metadata GA**: The **Chunk text with metadata** action is generally available (GA) and ready for production use.
+- **Execute C# scripts GA**: Run inline C# is generally available (GA) and ready for production use. Added capability to use isolated worker process for running scripts. 
+- [**Azure Logic Apps Labs**](https://aka.ms/lalabs): Refreshed content for Agent Loop, including support for Consumption workflows, bring your Azure API Management AI Gateway, Microsoft Team chat clients, MCP servers, and Easy Auth with Okta.
+- Various bug fixes and general improvements.
+<br><br>
+
+## Bundle and NuGet version 1.145.x
+- **SAP** connector operations: Added the **Gateway without work process** setting to enable SAP topologies with standalone gateways or with message server plus gateway-only instances. Helps resolve the following errors: "Gateway without R/3 connectivity" and "Gateway without work processes".
+- **trimByteOrderMark()**: This new expression function removes the Byte Order Mark (BOM) characters from the beginning of strings or binary content and is especially useful for processing XML content.
+- **Visual Studio Code designer**: Support dynamic schema-defined inputs and outputs for the **Compose XML with schema** and **Parse XML with schema** actions.
+- **Compose XML with schema** and **Parse XML with schema** actions: Added support for more XML schema constructs.
+- Various bug fixes and improvements
+<br><br>
+
+## Bundle and NuGet version 1.138.x
+- **AI Foundry support**: Build agent workflows that run with AI Foundry models. Centrally manage agents and use AI Foundry capabilities like tools, threads, and more.
+- **Autonomous agent workflows**: Build independent agent workflows that run with any available trigger. Start with new workflows or convert existing workflows by adding agent loops.
+- **Conversational agent workflows**: Build agent workflows with native chat client support using the Agent-to-Agent (A2A) protocol. Includes standalone chat client secured with Easy Auth and Microsoft Entra ID.
+- **Per user connections**: Build conversational agent workflows with user-scoped context so tools run with the identity of the signed-in user.
+- **Nested agents**: Delegate tasks to other agents as tools by using the new action **Send a task to a nested agent**.
+- **Agent handoff**: Support multi-agent patterns with capability to delegate task execution to specific agents.
+- Various bug fixes and improvements
+<br><br>
+
+## Bundle and NuGet version 1.131.x
+- Model Context Protocol (MCP) support: Create logic apps as remote MCP servers that use Server-Sent Events (SSE) and streamable HTTP transports for client-server communication.
+- Various bug fixes and improvements
+<br><br>
+
+## Bundle and NuGet version 1.127.x
+- **Compose XML with schema** and **Parse XML with schema** actions: Add support to choose XML schema.
+- **Logic Apps Rules Engine**: General availability. For more information, see https://go.microsoft.com/fwlink/?linkid=2325117
+- Various bug fixes and improvements
+<br><br>
+
+## Bundle and NuGet version 1.123.x
+- **Agent workflows**: Public preview for running agents in Standard workflows created with the **Agent** type. For more information, see https://go.microsoft.com/fwlink/?linkid=2320014.
+- Various bug fixes and improvements
+<br><br>
+
+## Bundle and NuGet version 1.119.x
+- **SAP** built-in connector: The response to SAP operations supports the SafeType parameter.
+- Various bug fixes and improvements
+<br><br>
+
+## Bundle and NuGet version 1.114.x
+- Custom code action: Enable support for dependency injection in .NET 8
+- **FTP** built-in connector: Connection setup has an option to remove the connection after the operation completes.
+- mergeObjects(): New expression function that merges two JSON objects.
+- Parse XML action: Added support for **xs:ID** data type.
+- Various bug fixes and improvements
+<br><br>
+
+## Bundle and NuGet version 1.94.x
+- Data storage persistence: Enable ZStandard compression.
+
+- Visual Studio Code extension: Added ability to generate unit tests and mock data from existing runs.
+
+- Non-production slot logic apps: Enable more thorough workflow validation.
+
+- Various bug fixes and improvements
+<br><br>
+
+## Bundle and NuGet version 1.91.x
+- Custom code action: Enable support for external dependent assemblies in .NET 8.
+- Data storage persistence: Enable ZStandard compression.
+- **XML Compose** and **XML Parse**: Public preview for new built-in operations.
+- Various bug fixes and improvements
+<br><br>
+
+## Bundle and NuGet version 1.87.x
+- .NET Framework (NetFx) Worker: Add retry logic.
+- Unsupported trigger type: Clarified error message.
+- Various bug fixes and improvements
+<br><br>
+
+## Bundle and NuGet version 1.81.x
+- **Service Bus** built-in connector: Added new peek-lock triggers and actions to remove dependency on fixed role instances for App Service Plan. The runtime is still supported for the existing operations. The designer uses the new operations for new workflows.
+- **File System** built-in connector: For the **Append File** action, add new input parameter to create file, if non-existent.
+- **File System** built-in connector: For the **Get File Content** action, add the **inferContentType** parameter.
+- Workflow template: Fixed error handling for workflow template expression resolution errors.
+- XML handling: Fixed inconsistent handling of various XML errors. The service now handles a range of .NET XML implementation parsing exceptions.
+- **Azure OpenAI** and **Azure AI Search** built-in connectors: Now generally available with this change.
+- **Data Operations** built-in actions: The **Chunk text** and **Parse a document** actions are now in Preview.
+- **Call a local function in this logic app** built-in action: Added .NET 8 support for calling custom .NET code.
+- **Integration Account Artifact Lookup** built-in action: Fixed a caching bug that caused the action to take a long time to complete.
+- Various bug fixes and improvements
+<br><br>
+
+## Bundle and NuGet version 1.70.x
 - **Azure OpenAI** and **Azure AI Search** built-in connectors: Now generally available with this change.
 - **3270**, **Host File**, **CICS**, **IMS**, and **IBM i** built-in connectors: Now generally available with this change.
 - **Azure Service Bus** built-in connector: Added support to get deferred messages.
